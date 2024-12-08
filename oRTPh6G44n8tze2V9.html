@@ -1,0 +1,530 @@
+<html><head><base href="/">
+<title>Home | Helping Hands With Cristina</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Digital planners and resources for case managers and caregivers. Find self-care tools, case management templates, and nonprofit resources.">
+<meta name="keywords" content="digital case management templates, resources for nonprofit organizations, self-care planners for busy professionals">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+<!-- Adding Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ABC123XYZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ABC123XYZ');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Helping Hands With Cristina",
+  "description": "Digital planners and resources for case managers and caregivers",
+  "url": "https://helpinghandswithcristina.com",
+  "sameAs": [
+    "https://www.instagram.com/helpinghandswithcristina",
+    "https://www.tiktok.com/@helpinghandswithcristina"
+  ],
+  "offers": {
+    "@type": "Offer",
+    "itemOffered": [
+      {
+        "@type": "Product",
+        "name": "Self-Care Planner",
+        "description": "Daily habit trackers, gratitude prompts, and mental health checklists"
+      },
+      {
+        "@type": "Product",
+        "name": "Case Management Templates",
+        "description": "Professional documentation templates, assessment forms, and progress notes"
+      }
+    ]
+  }
+}
+</script>
+<style>
+:root {
+  --primary: #4A90E2;
+  --secondary: #5AB8A4;
+  --accent: #F5B041;
+  --text: #2C3E50;
+  --light: #ECF0F1;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text);
+}
+
+.hero-gradient {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+}
+
+.btn-primary {
+  background-color: var(--accent);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: transform 0.2s;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+}
+
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--accent);
+  transition: width 0.3s;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.card {
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.floating-icon {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.testimonial-card {
+  background-color: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.popup-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: 1000;
+}
+
+.popup-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  max-width: 90%;
+  width: 400px;
+}
+
+.loading-spinner {
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid var(--primary);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="bg-white shadow-lg fixed w-full z-50">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="flex justify-between items-center h-16">
+      <div class="flex items-center space-x-8">
+        <h1 class="text-xl font-bold text-gray-800">Helping Hands With Cristina</h1>
+        <div class="hidden md:flex space-x-4">
+          <a href="index.html" class="nav-link text-gray-600 hover:text-gray-900">Home</a>
+          <a href="discounts.html" class="nav-link text-gray-600 hover:text-gray-900">Discounts</a>
+          <a href="#products" class="nav-link text-gray-600 hover:text-gray-900">Products</a>
+          <a href="#blog" class="nav-link text-gray-600 hover:text-gray-900">Cristina's Corner</a>
+          <a href="#about" class="nav-link text-gray-600 hover:text-gray-900">About</a>
+          <a href="#contact" class="nav-link text-gray-600 hover:text-gray-900">Contact</a>
+        </div>
+        <button class="md:hidden" onclick="toggleMobileMenu()">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div id="mobile-menu" class="hidden md:hidden w-full">
+  <div class="px-2 pt-2 pb-3 space-y-1">
+    <a href="index.html" class="block px-3 py-2 text-base font-medium text-gray-700">Home</a>
+    <a href="discounts.html" class="block px-3 py-2 text-base font-medium text-gray-700">Discounts</a>
+    <a href="#products" class="block px-3 py-2 text-base font-medium text-gray-700">Products</a>
+    <a href="#blog" class="block px-3 py-2 text-base font-medium text-gray-700">Cristina's Corner</a>
+    <a href="#about" class="block px-3 py-2 text-base font-medium text-gray-700">About</a>
+    <a href="#contact" class="block px-3 py-2 text-base font-medium text-gray-700">Contact</a>
+  </div>
+</div>
+
+<!-- Hero Section -->
+<section class="hero-gradient pt-28 pb-20">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="text-center text-white">
+      <h2 class="text-4xl md:text-5xl font-bold mb-6">Supporting Case Managers & Caregivers</h2>
+      <p class="text-xl mb-8">Digital resources and templates to streamline your workflow</p>
+      <a href="https://www.etsy.com/shop/helpinghandswithcristina" class="btn-primary inline-block">Shop Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- Popular Resources Section -->
+<section class="py-16">
+  <div class="max-w-6xl mx-auto px-4">
+    <h3 class="text-3xl font-bold text-center mb-12">Popular Resources</h3>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div class="card bg-white rounded-lg shadow-md p-6">
+        <svg class="w-12 h-12 mb-4 text-primary mx-auto" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm2 14H7v-2h7v2zm0-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+        </svg>
+        <h4 class="text-xl font-semibold text-center mb-2">Self-Care Planner</h4>
+        <p class="text-gray-600 text-center">Daily habit trackers, gratitude prompts, and mental health checklists</p>
+        <a href="https://www.etsy.com/shop/helpinghandswithcristina" class="btn-primary mt-4 text-center block">Shop Now</a>
+      </div>
+
+      <div class="card bg-white rounded-lg shadow-md p-6">
+        <svg class="w-12 h-12 mb-4 text-primary mx-auto" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+        </svg>
+        <h4 class="text-xl font-semibold text-center mb-2">Case Management Templates</h4>
+        <p class="text-gray-600 text-center">Professional documentation templates, assessment forms, and progress notes</p>
+        <a href="https://www.etsy.com/shop/helpinghandswithcristina" class="btn-primary mt-4 text-center block">Shop Now</a>
+      </div>
+
+      <div class="card bg-white rounded-lg shadow-md p-6">
+        <svg class="w-12 h-12 mb-4 text-primary mx-auto" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+        </svg>
+        <h4 class="text-xl font-semibold text-center mb-2">Non-Profit Resources</h4>
+        <p class="text-gray-600 text-center">Grant writing templates, volunteer management tools, and fundraising guides</p>
+        <a href="https://www.etsy.com/shop/helpinghandswithcristina" class="btn-primary mt-4 text-center block">Shop Now</a>
+      </div>
+
+      <div class="card bg-white rounded-lg shadow-md p-6">
+        <svg class="w-12 h-12 mb-4 text-primary mx-auto" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.55-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z"/>
+        </svg>
+        <h4 class="text-xl font-semibold text-center mb-2">Florida Discounts</h4>
+        <p class="text-gray-600 text-center">Comprehensive guide to SNAP & Medicaid eligible discounts for museums and attractions</p>
+        <a href="discounts.html" class="btn-primary mt-4 text-center block">Learn More</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="bg-gray-50 py-16">
+  <div class="max-w-6xl mx-auto px-4">
+    <h3 class="text-3xl font-bold text-center mb-12">What People Are Saying</h3>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="testimonial-card">
+        <p class="italic mb-4">"These templates have saved me hours of work. The self-care planner has been a game-changer for managing my daily routine."</p>
+        <p class="font-semibold">- Sarah M., Case Manager</p>
+      </div>
+      <div class="testimonial-card">
+        <p class="italic mb-4">"The case management templates are so professional and comprehensive. They've helped me stay organized and efficient."</p>
+        <p class="font-semibold">- Michael R., Social Worker</p>
+      </div>
+      <div class="testimonial-card">
+        <p class="italic mb-4">"The Florida discounts guide has been invaluable for my clients. It's opened up so many opportunities for them."</p>
+        <p class="font-semibold">- Lisa P., Healthcare Navigator</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Updated Blog Section (Cristina's Corner) -->
+<section class="py-16">
+  <div class="max-w-6xl mx-auto px-4">
+    <h3 class="text-3xl font-bold text-center mb-12">Cristina's Corner</h3>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Blog Card 1 -->
+      <div class="card bg-white rounded-lg shadow-md overflow-hidden">
+        <div class="relative h-48 bg-gradient-to-r from-primary to-secondary">
+          <svg class="absolute inset-0 w-full h-full opacity-20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+          </svg>
+        </div>
+        <div class="p-6">
+          <h4 class="text-xl font-semibold mb-2">5 Self-Care Tips for Busy Professionals</h4>
+          <p class="text-gray-600 mb-4">Essential strategies to maintain work-life balance and prevent burnout. Learn practical tips for incorporating self-care into your daily routine...</p>
+          <a href="blog/self-care-tips.html" class="text-primary hover:underline">Read More →</a>
+        </div>
+      </div>
+      <!-- Blog Card 2 -->
+      <div class="card bg-white rounded-lg shadow-md overflow-hidden">
+        <div class="relative h-48 bg-gradient-to-r from-primary to-secondary">
+          <svg class="absolute inset-0 w-full h-full opacity-20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+          </svg>
+        </div>
+        <div class="p-6">
+          <h4 class="text-xl font-semibold mb-2">Streamlining Case Management Tasks</h4>
+          <p class="text-gray-600 mb-4">Practical tips and tools to improve efficiency in your daily workflow...</p>
+          <a href="blog/streamlining-tasks.html" class="text-primary hover:underline">Read More →</a>
+        </div>
+      </div>
+      <!-- Blog Card 3 -->
+      <div class="card bg-white rounded-lg shadow-md overflow-hidden">
+        <div class="relative h-48 bg-gradient-to-r from-primary to-secondary">
+          <svg class="absolute inset-0 w-full h-full opacity-20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+          </svg>
+        </div>
+        <div class="p-6">
+          <h4 class="text-xl font-semibold mb-2">Making the Most of Florida Resources</h4>
+          <p class="text-gray-600 mb-4">A comprehensive guide to local support services and programs...</p>
+          <a href="blog/florida-resources.html" class="text-primary hover:underline">Read More →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Free Resources Section -->
+<section class="bg-gray-50 py-16">
+  <div class="max-w-6xl mx-auto px-4 text-center">
+    <h3 class="text-3xl font-bold mb-8">Free Resources</h3>
+    <div class="bg-white rounded-lg shadow-lg p-8 max-w-2xl mx-auto">
+      <svg class="w-16 h-16 mx-auto mb-4 text-primary" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+      </svg>
+      <h4 class="text-xl font-semibold mb-4">Free Self-Care Tracker</h4>
+      <p class="text-gray-600 mb-6">Download a free self-care tracker to kickstart your journey toward balance and productivity.</p>
+      <a href="/downloads/self-care-tracker.pdf" class="btn-primary inline-block">Download Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- Social Media Feeds Section -->
+<section class="py-16">
+  <div class="max-w-6xl mx-auto px-4">
+    <h3 class="text-3xl font-bold text-center mb-12">Stay Connected</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- TikTok Feed -->
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <h4 class="text-xl font-semibold mb-4">Latest on TikTok</h4>
+        <div id="tiktok-feed" class="h-96 overflow-y-scroll">
+          <!-- TikTok embed code will go here -->
+        </div>
+      </div>
+      <!-- Instagram Feed -->
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <h4 class="text-xl font-semibold mb-4">Instagram Updates</h4>
+        <div id="instagram-feed" class="h-96 overflow-y-scroll">
+          <!-- Instagram embed code will go here -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Meet Cristina Video Section -->
+<section class="py-16">
+  <div class="max-w-6xl mx-auto px-4 text-center">
+    <h3 class="text-3xl font-bold mb-8">Meet Cristina</h3>
+    <div class="aspect-w-16 aspect-h-9 max-w-3xl mx-auto">
+      <div class="bg-gray-200 rounded-lg p-8">
+        <p class="text-gray-600 mb-4">Watch Cristina share her journey and passion for helping case managers and caregivers.</p>
+        <div class="w-full h-96 bg-gray-300 rounded-lg flex items-center justify-center">
+          <span class="text-gray-500">Video Coming Soon</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section class="bg-gray-50 py-16">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="text-center">
+      <h3 class="text-3xl font-bold mb-8">About Helping Hands With Cristina</h3>
+      <p class="text-gray-600 max-w-2xl mx-auto">Dedicated to providing quality resources and support for case managers and caregivers. Our digital tools help streamline your workflow and improve client care.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Updated Footer with Social Media Links -->
+<footer class="bg-gray-800 text-white py-12">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div>
+        <h4 class="text-lg font-semibold mb-4">About</h4>
+        <p class="text-gray-400">Helping hands with Cristina provides digital resources for case managers and caregivers.</p>
+      </div>
+      <div>
+        <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+        <ul class="space-y-2">
+          <li><a href="index.html" class="text-gray-400 hover:text-white">Home</a></li>
+          <li><a href="discounts.html" class="text-gray-400 hover:text-white">Discounts</a></li>
+          <li><a href="https://www.etsy.com/shop/helpinghandswithcristina" class="text-gray-400 hover:text-white">Shop</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-lg font-semibold mb-4">Connect With Us</h4>
+        <ul class="space-y-2">
+          <li><a href="https://www.tiktok.com/@helpinghandswithcristina" class="text-gray-400 hover:text-white">TikTok</a></li>
+          <li><a href="https://www.instagram.com/helpinghandswithcristina" class="text-gray-400 hover:text-white">Instagram</a></li>
+          <li class="text-gray-400">Email: hello@helpinghandswithcristina.com</li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-lg font-semibold mb-4">Newsletter</h4>
+        <p class="text-gray-400 mb-4">Stay updated with our latest resources and tips.</p>
+        <form id="newsletter-form">
+          <input type="email" placeholder="Your email" class="w-full px-4 py-2 rounded-lg bg-gray-700 border-gray-600 text-white">
+          <button type="submit" class="btn-primary mt-2 w-full">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+      <p class="text-gray-400">&copy; 2024 Helping Hands With Cristina. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<div id="promotional-popup" class="popup-overlay">
+  <div class="popup-content">
+    <button class="absolute top-4 right-4 text-gray-500 hover:text-gray-700" onclick="closePopup()">×</button>
+    <h3 class="text-2xl font-bold mb-4">Join the Helping Hands Community!</h3>
+    <p class="mb-6">Subscribe now and receive a free self-care checklist.</p>
+    <form id="popup-form" class="space-y-4">
+      <input type="email" placeholder="Your email" class="w-full px-4 py-2 border rounded-lg" required>
+      <button type="submit" class="btn-primary w-full">Subscribe</button>
+    </form>
+  </div>
+</div>
+
+<div id="cookie-notice" class="fixed bottom-0 w-full bg-gray-900 text-white p-4 text-center">
+  <p class="inline-block mr-4">We use cookies to improve your experience on our site.</p>
+  <button onclick="acceptCookies()" class="bg-white text-gray-900 px-4 py-2 rounded">Accept</button>
+</div>
+
+<button id="back-to-top" class="fixed bottom-8 right-8 bg-primary text-white p-2 rounded-full shadow-lg hidden">
+  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+  </svg>
+</button>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+
+  // Form submission handling
+  const forms = document.querySelectorAll('form');
+  forms.forEach(form => {
+    form.addEventListener('submit', handleNewsletterSubmit);
+  });
+});
+
+// Toggle Mobile Menu Function
+function toggleMobileMenu() {
+  const mobileMenu = document.getElementById('mobile-menu');
+  mobileMenu.classList.toggle('hidden');
+}
+
+// Handle Newsletter Submit
+async function handleNewsletterSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  const email = form.querySelector('input[type="email"]').value;
+  const submitBtn = form.querySelector('button[type="submit"]');
+  
+  try {
+    submitBtn.innerHTML = '<div class="loading-spinner mx-auto"></div>';
+    // Add your newsletter API call here
+    submitBtn.innerHTML = 'Success!';
+    form.reset();
+  } catch (error) {
+    submitBtn.innerHTML = 'Error - Try Again';
+  }
+  
+  setTimeout(() => {
+    submitBtn.innerHTML = 'Subscribe';
+  }, 3000);
+}
+
+// Display promotional popup after 10 seconds
+setTimeout(() => {
+  document.getElementById('promotional-popup').style.display = 'block';
+}, 10000);
+
+function closePopup() {
+  document.getElementById('promotional-popup').style.display = 'none';
+}
+
+// Handle popup form submission
+document.getElementById('popup-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  alert('Thank you for subscribing! Your free checklist will be emailed shortly.');
+  closePopup();
+});
+
+// Cookies Acceptance
+function acceptCookies() {
+  document.getElementById('cookie-notice').style.display = 'none';
+  localStorage.setItem('cookiesAccepted', 'true');
+}
+
+// Check if cookies were previously accepted
+if (localStorage.getItem('cookiesAccepted')) {
+  document.getElementById('cookie-notice').style.display = 'none';
+}
+
+// Back to Top Button Functionality
+window.onscroll = function() {
+  const btn = document.getElementById('back-to-top');
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    btn.classList.remove('hidden');
+  } else {
+    btn.classList.add('hidden');
+  }
+};
+
+document.getElementById('back-to-top').onclick = function() {
+  window.scrollTo({top: 0, behavior: 'smooth'});
+};
+</script>
+
+</body>
+</html>
